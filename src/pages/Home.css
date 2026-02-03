@@ -1,0 +1,35 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-title {
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* O estilo do input agora vive aqui */
+.home-search-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.home-search-input:focus {
+  border-color: #2563eb;
+  outline: none;
+  background-color: #fff;
+}
+
+.home-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

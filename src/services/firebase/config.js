@@ -11,14 +11,10 @@ const firebaseConfig = {
   measurementId: "G-QLH3RB896J",
 };
 
-// 1. Inicializa o App
+// Inicializa o App
 const app = initializeApp(firebaseConfig);
 
-// 2. Inicializa o Firestore com cache persistente (Modo Offline Moderno)
-// O localCache já substitui o enableIndexedDbPersistence com mais eficiência
-const db = initializeFirestore(app, {
+// Inicializa o Firestore com cache persistente e exporta uma única vez
+export const db = initializeFirestore(app, {
   localCache: persistentLocalCache(),
 });
-
-// 3. Exporta o db já configurado
-export { db };

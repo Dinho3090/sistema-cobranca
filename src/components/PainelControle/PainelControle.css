@@ -1,0 +1,185 @@
+/* --- CONFIGURAÇÃO GERAL DA TELA --- */
+.painel-controle-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card padrão para as seções (Meta e Ferramentas) */
+.card-acoes {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.card-acoes h2 {
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-acoes p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* --- SEÇÃO DE METAS --- */
+.meta-input-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0 15px;
+  height: 50px;
+  flex: 1;
+  max-width: 250px;
+  transition: all 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color: #2563eb;
+  background: white;
+}
+
+.input-wrapper span {
+  font-weight: bold;
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.input-wrapper input {
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1e293b;
+  width: 100%;
+  outline: none;
+}
+
+.meta-badge {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 0 20px;
+  border-radius: 12px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- GRID DE BOTÕES --- */
+.botoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.btn-painel {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.backup { background-color: #f1f5f9; color: #475569; }
+.restaurar { background-color: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.imprimir { background-color: #1e293b; color: white; }
+
+.btn-painel:hover { 
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+.btn-painel:active { transform: scale(0.98); }
+
+/* --- CONTROLE DE EXIBIÇÃO --- */
+.apenas-impressao {
+  display: none; /* Escondido na tela do PC */
+}
+
+/* --- 🖨️ REGRAS DE IMPRESSÃO (O QUE SAI NO PAPEL) --- */
+@media print {
+  /* Esconde TUDO o que for para tela */
+  .no-print, 
+  nav, 
+  .sidebar, 
+  header, 
+  button, 
+  .card-acoes {
+    display: none !important;
+  }
+
+  /* Mostra a seção de impressão */
+  .apenas-impressao {
+    display: block !important;
+    width: 100%;
+  }
+
+  .painel-controle-container {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .tabela-impressao {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .tabela-impressao th, 
+  .tabela-impressao td {
+    border: 1px solid #000 !important;
+    padding: 10px;
+    text-align: left;
+    color: #000 !important;
+  }
+
+  .tabela-impressao th {
+    background-color: #eee !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .tabela-impressao td small {
+    display: block;
+    color: #333 !important;
+    font-size: 0.8rem;
+  }
+
+  h2, h1 {
+    text-align: center;
+    color: #000 !important;
+  }
+}
+
+/* --- RESPONSIVIDADE CELULAR --- */
+@media (max-width: 600px) {
+  .meta-input-container { flex-direction: column; align-items: stretch; }
+  .input-wrapper, .meta-badge { max-width: none; }
+  .botoes-grid { grid-template-columns: 1fr; }
+}

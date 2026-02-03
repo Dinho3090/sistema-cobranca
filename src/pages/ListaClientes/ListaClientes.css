@@ -1,0 +1,95 @@
+/* Container Geral da Aba */
+.lista-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Caixa de Busca */
+.search-box {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* O Input de Busca */
+.input-busca {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 20px;
+  border: 2px solid #f1f5f9;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-busca:focus {
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Texto de contagem */
+.search-count {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Mensagem de Vazio */
+.empty-msg {
+  grid-column: 1 / -1; /* Ocupa todas as colunas da grid */
+  text-align: center;
+  padding: 50px;
+  color: #94a3b8;
+  background: #f1f5f9;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e1;
+}
+
+/* Ajuste para Celular */
+@media (max-width: 480px) {
+  .lista-container {
+    padding: 10px;
+  }
+  
+  .search-box {
+    padding: 15px;
+    border-radius: 0 0 16px 16px; /* Gruda no topo se quiser */
+    margin: -10px -10px 20px -10px; /* Remove margens laterais no mobile */
+    border-top: none;
+  }
+}
+/* 📜 Grid de Cards - Agrupando de 2 em 2 */
+.lista-cards {
+  display: grid;
+  /* Cria exatamente duas colunas de tamanhos iguais */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; /* Espaço entre os cards */
+  width: 100%;
+}
+
+/* 📱 Ajuste para Tablet e Celular */
+@media (max-width: 900px) {
+  .lista-cards {
+    /* Em telas menores, os cards voltam a ficar um embaixo do outro */
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Garante que o card ocupe todo o espaço da coluna */
+.card-moderno, .card-cliente {
+  width: 100%;
+  box-sizing: border-box;
+}

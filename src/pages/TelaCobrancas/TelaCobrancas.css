@@ -1,0 +1,27 @@
+.cobrancas-container { padding: 20px; }
+
+.cobrancas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.valor-atrasado { color: #dc2626; font-size: 1.5rem; margin-left: 10px; }
+
+.status-title {
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.status-title.hoje { background: #dbeafe; color: #1e40af; border-left: 5px solid #1e40af; }
+.status-title.atraso { background: #fee2e2; color: #991b1b; border-left: 5px solid #991b1b; }
+
+.divider { margin: 40px 0; border: 0; border-top: 2px dashed #e2e8f0; }
+
+.empty-msg { color: #94a3b8; font-style: italic; padding: 20px; }
